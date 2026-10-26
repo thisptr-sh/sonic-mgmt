@@ -4904,11 +4904,12 @@ route/test_static_route.py::test_static_route_ecmp_ipv6:
 
 route/test_static_route.py::test_static_route_ecmp_warmboot:
   skip:
-    reason: "Warm reboot is not supported on dualtor, m0, m1, or mx topologies"
+    reason: "Warm reboot is not supported on dualtor, m0, m1, isolated or mx topologies"
     conditions_logical_operator: OR
     conditions:
       - "topo_name in ['dualtor', 'dualtor-56', 'dualtor-120', 'dualtor-aa', 'dualtor-aa-56', 'dualtor-aa-64-breakout']"
       - "topo_type in ['m0', 'm1', 'mx']"
+      - "'isolated' in topo_name"
 
 route/test_static_route.py::test_static_route_ipv6:
   xfail:
@@ -4918,19 +4919,21 @@ route/test_static_route.py::test_static_route_ipv6:
 
 route/test_static_route.py::test_static_route_ipv6_warmboot:
   skip:
-    reason: "Warm reboot is not supported on dualtor, m0, m1, or mx topologies"
+    reason: "Warm reboot is not supported on dualtor, m0, m1, isolated or mx topologies"
     conditions_logical_operator: OR
     conditions:
       - "topo_name in ['dualtor', 'dualtor-56', 'dualtor-120', 'dualtor-aa', 'dualtor-aa-56', 'dualtor-aa-64-breakout']"
       - "topo_type in ['m0', 'm1', 'mx']"
+      - "'isolated' in topo_name"
 
 route/test_static_route.py::test_static_route_warmboot:
   skip:
-    reason: "Warm reboot is not supported on dualtor, m0, m1, or mx topologies"
+    reason: "Warm reboot is not supported on dualtor, m0, m1, isolated or mx topologies"
     conditions_logical_operator: OR
     conditions:
       - "topo_name in ['dualtor', 'dualtor-56', 'dualtor-120', 'dualtor-aa', 'dualtor-aa-56', 'dualtor-aa-64-breakout']"
       - "topo_type in ['m0', 'm1', 'mx']"
+      - "'isolated' in topo_name"
 
 #######################################
 #####           sai_qualify       #####
